@@ -105,7 +105,7 @@ def render_image_batch(args, prompts, root):
             display.display(grid_image)
 
 
-def render_animation(args, anim_args, animation_prompts, root):
+def render_animation(args, anim_args, animation_prompts, root , wipChoosePrompt):
     # animations use key framed prompts
     args.prompts = animation_prompts
 
@@ -291,7 +291,7 @@ def render_animation(args, anim_args, animation_prompts, root):
         #WIP Code
         if prev_sample is not None:
           # print('choosing Prompt', choosePrompt(image))
-          args.prompt = choosePrompt(prev_img,prompt_series[frame_idx]);
+          args.prompt = wipChoosePrompt(prev_img,prompt_series[frame_idx]);
           args.clip_prompt = args.prompt
         #END WIP CODE
 
